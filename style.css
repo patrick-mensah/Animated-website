@@ -10,6 +10,7 @@
     background-image: linear-gradient(rgba(5,0,136,0.5),rgba(5,0,136,0.5)),url(image/A13.jpg);
     background-position: center;
     background-size: cover;
+    overflow-x: hidden;
 }
 nav{
     width: 100%;
@@ -62,9 +63,11 @@ nav:hover ul li a{
 .content p{
     max-width: 500px;
     line-height: 28px;
+    opacity: 0;
 }
 .link{
     margin-top: 30px;
+    opacity: 0;
 }
 .link a{
     color: #fff;
@@ -73,5 +76,25 @@ nav:hover ul li a{
 .btn{
     border: 2px solid #fff;
     padding: 10px;
-    border: radius 5px;
+    border-radius: 30px;
+    margin-right: 15px;
+}
+.slide-left{
+    animation: slide-left 1s linear forwards;
+}
+@keyframes slide-left {
+    0%{
+        transform: translate(100px, 0);
+        opacity: 0;
+    }
+    100%{
+        transform: translate(0px, 0);
+        opacity: 1;
+    }
+}
+p.slide-left{
+    animation-delay: 1s;
+}
+.link.slide-left{
+    animation-delay: 2s;
 }
